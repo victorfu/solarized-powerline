@@ -178,7 +178,11 @@ prompt_status() {
 
 # Time: current time
 prompt_time() {
-  prompt_segment_right 250 black '%D{%H:%M:%S} '
+  prompt_segment_right green white '%D{%H:%M:%S} '
+}
+
+prompt_date() {
+  prompt_segment_right blue white '%D{%Y-%m-%d} '
 }
 
 ## Main prompt
@@ -197,6 +201,7 @@ build_prompt() {
 build_rprompt() {
   prompt_vi
   prompt_time
+  prompt_date
 }
 
 prompt_vi() {

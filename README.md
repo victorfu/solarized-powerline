@@ -1,11 +1,7 @@
 # solarized-powerline
 Solarized powerline style theme for zsh
 
-Forked from [agnoster's theme](https://gist.github.com/3712874) and influenced by [maverick2000's theme](https://github.com/maverick2000/zsh2000) and [iijeremyFreeAgent's theme](https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme).
-
-### Preview
-![preview] (https://raw.github.com/houjunchen/solarized-powerline/master/preview.png)
-![preview2] (https://raw.github.com/houjunchen/solarized-powerline/master/preview2.png)
+Forked from [abner's solarized-powerline theme](https://github.com/houjunchen/solarized-powerline.git).
 
 ### Prerequisites
 
