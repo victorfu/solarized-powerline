@@ -178,12 +178,12 @@ prompt_status() {
 
 # Current time
 prompt_time() {
-  prompt_segment_right yellow white '%D{%H:%M:%S} '
+  prompt_segment_right yellow white '%D{%H:%M} '
 }
 
 # Current date
 prompt_date() {
-  prompt_segment_right green white '%D{%Y-%m-%d} '
+  prompt_segment_right green white '%D{%y-%m-%d} '
 }
 
 # Current battery level
