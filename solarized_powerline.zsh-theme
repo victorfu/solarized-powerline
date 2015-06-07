@@ -176,14 +176,29 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
-# Time: current time
+# Current time
 prompt_time() {
-  prompt_segment_right green white '%D{%H:%M:%S} '
+  prompt_segment_right yellow white '%D{%H:%M:%S} '
 }
 
+# Current date
 prompt_date() {
-  prompt_segment_right blue white '%D{%Y-%m-%d} '
+  prompt_segment_right green white '%D{%Y-%m-%d} '
 }
+
+# Current battery level
+if [[ "$OSTYPE" = darwin* ]] ; then
+prompt_battry() {
+  local smart_battery_status="$(ioreg -rc "AppleSmartBattery")"
+  typeset -F maxcapacity=$(echo $smart_battery_status | grep '^.*"MaxCapacity"\ =\ ' | sed -e 's/^.*"MaxCapacity"\ =\ //')
+  typeset -F currentcapacity=$(echo $smart_battery_status | grep '^.*"CurrentCapacity"\ =\ ' | sed -e 's/^.*CurrentCapacity"\ =\ //')
+  integer i=$(((currentcapacity/maxcapacity) * 100))
+  prompt_segment_right blue white $i'%%'
+}
+else
+prompt_battry() {
+}
+fi
 
 ## Main prompt
 build_prompt() {
@@ -202,6 +217,7 @@ build_rprompt() {
   prompt_vi
   prompt_time
   prompt_date
+  prompt_battry
 }
 
 prompt_vi() {
