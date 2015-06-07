@@ -214,10 +214,11 @@ build_prompt() {
 
 ## Right prompt
 build_rprompt() {
-  prompt_vi
-  prompt_time
-  prompt_date
-  prompt_battry
+  if [[ $(tput cols) -ge 100 ]] ; then
+    prompt_vi
+    prompt_time
+    prompt_date
+  fi
 }
 
 prompt_vi() {
