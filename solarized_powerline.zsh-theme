@@ -183,7 +183,7 @@ prompt_time() {
 
 # Current date
 prompt_date() {
-  prompt_segment_right green white '%D{%y-%m-%d} '
+  prompt_segment_right green white '%D{%Y-%m-%d} '
 }
 
 # Current battery level
