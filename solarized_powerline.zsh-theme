@@ -225,7 +225,7 @@ prompt_vi() {
   if [[ -n $N_MODE || -n $MODE_INDICATOR ]] && [[ $SP_DISABLE_VI_INDICATOR != true ]]; then
     N_MODE="[N] "
     I_MODE="[I] "
-    prompt_segment_right 246 black "`vi_mode_prompt_info`"
+    prompt_segment_right 246 white "`vi_mode_prompt_info`"
   fi
 }
 
